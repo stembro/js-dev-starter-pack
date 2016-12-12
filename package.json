@@ -4,7 +4,8 @@
   "description": "A base set of tools, settings, and structure to use when beginning a new javascript project.",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "babel src -d lib",
+    "run": "node lib/app.js"
   },
   "repository": {
     "type": "git",
@@ -18,5 +19,9 @@
   "bugs": {
     "url": "https://github.com/stembro/js-dev-starter-pack/issues"
   },
-  "homepage": "https://github.com/stembro/js-dev-starter-pack#readme"
+  "homepage": "https://github.com/stembro/js-dev-starter-pack#readme",
+  "devDependencies": {
+    "babel-cli": "^6.18.0",
+    "babel-preset-latest": "^6.16.0"
+  }
 }
