@@ -1,0 +1,22 @@
+{
+  "name": "js-dev-starter-pack",
+  "version": "0.0.1",
+  "description": "A base set of tools, settings, and structure to use when beginning a new javascript project.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stembro/js-dev-starter-pack.git"
+  },
+  "keywords": [
+    "javascript"
+  ],
+  "author": "Stephen Brown",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/stembro/js-dev-starter-pack/issues"
+  },
+  "homepage": "https://github.com/stembro/js-dev-starter-pack#readme"
+}
