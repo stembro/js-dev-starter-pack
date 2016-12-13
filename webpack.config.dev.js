@@ -9,11 +9,14 @@ export default {
   ],
   target: 'web',
   output: {
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(__dirname, 'src'),
     publicPath: '/',
-    filename: 'app.js'
+    filename: 'bundle.js'
   },
   plugins: [],
+  resolveLoader: {
+    root: path.join(__dirname, 'node_modules')
+  },
   module: {
     loaders: [
       {test: /\.js$/, exclude: /node_modules/, loaders: ['babel']},

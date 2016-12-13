@@ -1,7 +1,15 @@
 import express from 'express';
 import path from 'path';
+import webpack from 'webpack';
+import config from '../webpack.config.dev';
 
 const app = express();
+const compiler = webpack(config);
+
+app.use(require('webpack-dev-middleware')(compiler, {
+    noInfo: true,
+    publicPath: config.output.publicPath
+}));
 
 const port = process.env.PORT;
 const host = process.env.IP;

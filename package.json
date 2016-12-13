@@ -6,11 +6,9 @@
   "scripts": {
     "prestart": "babel-node buildScripts/startMessage.js",
     "start": "babel-node buildScripts/srcServer.js",
-    "build": "babel src -d dist",
     "lint": "esw src",
     "lint:watch": "npm run lint -- --watch",
-    "run": "node dist/app.js",
-    "all": "npm-run-all --parallel run lint:watch"
+    "all": "npm-run-all --parallel start lint:watch"
   },
   "repository": {
     "type": "git",
@@ -27,12 +25,15 @@
   "homepage": "https://github.com/stembro/js-dev-starter-pack#readme",
   "devDependencies": {
     "babel-cli": "^6.18.0",
+    "babel-core": "^6.20.0",
+    "babel-loader": "^6.2.9",
     "babel-preset-latest": "^6.16.0",
     "eslint": "^3.12.1",
     "eslint-plugin-import": "^2.2.0",
     "eslint-watch": "^2.1.14",
     "express": "^4.14.0",
     "npm-run-all": "^3.1.2",
-    "webpack": "^1.14.0"
+    "webpack": "^1.14.0",
+    "webpack-dev-middleware": "^1.8.4"
   }
 }
