@@ -4,11 +4,13 @@
   "description": "A base set of tools, settings, and structure to use when beginning a new javascript project.",
   "main": "app.js",
   "scripts": {
+    "prestart": "babel-node buildScripts/startMessage.js",
+    "start": "babel-node buildScripts/srcServer.js",
     "build": "babel src -d dist",
-    "lint": "esw src --color",
+    "lint": "esw src",
     "lint:watch": "npm run lint -- --watch",
     "run": "node dist/app.js",
-    "start": "npm-run-all --parallel run lint:watch"
+    "all": "npm-run-all --parallel run lint:watch"
   },
   "repository": {
     "type": "git",
