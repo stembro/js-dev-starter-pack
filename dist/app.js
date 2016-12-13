@@ -1,5 +1,5 @@
-"use strict";
+'use strict';
 
-var hello = "hello, javascript";
+var _hello = require('./modules/hello');
 
-console.log(hello);
+console.log(_hello.hello);
