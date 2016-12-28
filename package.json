@@ -5,10 +5,13 @@
   "main": "app.js",
   "scripts": {
     "prestart": "babel-node buildScripts/startMessage.js",
-    "start": "babel-node buildScripts/srcServer.js",
+    "start": "npm-run-all --parallel security-check lint:watch open:src",
+    "open:src": "babel-node buildScripts/srcServer.js",
+    "security-check": "nsp check",
+    "localtunnel": "lt --port 3000",
+    "share": "npm-run-all --parallel open:src localtunnel",
     "lint": "esw src",
-    "lint:watch": "npm run lint -- --watch",
-    "all": "npm-run-all --parallel start lint:watch"
+    "lint:watch": "npm run lint -- --watch"
   },
   "repository": {
     "type": "git",
@@ -32,7 +35,9 @@
     "eslint-plugin-import": "^2.2.0",
     "eslint-watch": "^2.1.14",
     "express": "^4.14.0",
+    "localtunnel": "^1.8.2",
     "npm-run-all": "^3.1.2",
+    "nsp": "^2.6.2",
     "webpack": "^1.14.0",
     "webpack-dev-middleware": "^1.8.4"
   }
