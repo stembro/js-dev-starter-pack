@@ -1,3 +1,5 @@
-import {hello} from './modules/hello';
+import {msg} from './modules/example';
 
-console.log(hello);
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelector('#example').innerHTML = msg;
+});
