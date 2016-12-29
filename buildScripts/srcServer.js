@@ -17,11 +17,9 @@ app.get('/', function(req, res) {
    res.sendFile(path.join(__dirname, '../src/index.html'));
 });
 
-app.get('/examples', function(req, res) {
+app.get('/users', function(req, res) {
   res.json([
-    {"id":1, "name":"one"},
-    {"id":2, "name":"two"},
-    {"id":3, "name":"three"}
+    {id:1,firstName:"Stephen",lastName:"Brown",email:"ontheheap@gmail.com"},
   ]);
 });
 
