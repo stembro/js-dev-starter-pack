@@ -1,16 +1,17 @@
 import path from 'path';
+import webpack from 'webpack';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 
 export default {
-  debug: true,
-  devtool: 'inline-source-map',
-  noInfo: false,
+  debug: false,
+  devtool: 'source-map',
+  noInfo: true,
   entry: [
     path.resolve(__dirname, 'src/app')
   ],
   target: 'web',
   output: {
-    path: path.resolve(__dirname, 'src'),
+    path: path.resolve(__dirname, 'dist'),
     publicPath: '/',
     filename: 'bundle.js'
   },
@@ -19,6 +20,8 @@ export default {
       template: 'src/index.html',
       inject: true
     }),
+    new webpack.optimize.DedupePlugin(),
+    new webpack.optimize.UglifyJsPlugin()
   ],
   resolveLoader: {
     root: path.join(__dirname, 'node_modules')
